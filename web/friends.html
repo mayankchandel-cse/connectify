@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify — Friends</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="feed">connectify</a>
+    <form class="search-box" action="search" method="get">
+      <input type="text" name="q" placeholder="Search friends..."><button type="submit">Search</button>
+    </form>
+    <nav class="nav-links"><a href="feed">Home</a><a href="profile">Profile</a><a href="friend">Friends</a><a href="logout">Log Out</a></nav>
+  </header>
+
+  <div class="layout">
+    <main class="feed" style="max-width:800px;margin:0 auto">
+      <div class="card">
+        <h3>Friend Requests</h3>
+        <div class="friend-row"><span class="avatar">S</span><div><div class="name">Sneha Gupta</div><div style="font-size:13px;color:#65676b">wants to be friends</div></div></div>
+        <form action="friend" method="post" style="display:inline"><input type="hidden" name="action" value="accept"><input type="hidden" name="requestId" value="5"><button class="btn btn-small" type="submit">Accept</button></form>
+        <form action="friend" method="post" style="display:inline"><input type="hidden" name="action" value="reject"><input type="hidden" name="requestId" value="5"><button class="btn btn-grey btn-small" type="submit">Reject</button></form>
+        <p style="color:#65676b;font-size:14px;margin-top:10px">FriendServlet loads real pending requests here (FriendDAO.getPendingRequests).</p>
+      </div>
+
+      <div class="card">
+        <h3>My Friends (2)</h3>
+        <div class="friend-row"><span class="avatar">P</span><div><div class="name">Priya Patel</div><div style="font-size:13px;color:#65676b">priya@gmail.com</div></div></div>
+        <div class="friend-row"><span class="avatar">A</span><div><div class="name">Arjun Mehta</div><div style="font-size:13px;color:#65676b">arjun@gmail.com</div></div></div>
+      </div>
+
+      <div class="card">
+        <h3>People You May Know</h3>
+        <div class="friend-row"><span class="avatar">D</span><div><div class="name">Divya Nair</div><div style="font-size:13px;color:#65676b">Chef in training</div></div></div>
+        <form action="friend" method="post" style="margin:4px 0 0 50px"><input type="hidden" name="action" value="send"><input type="hidden" name="receiverId" value="8"><button class="btn btn-small" type="submit">+ Add Friend</button></form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

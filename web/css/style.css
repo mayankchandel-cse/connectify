@@ -1,0 +1,91 @@
+/* Connectify — Facebook-inspired blue (#1877f2) + white theme */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Helvetica, Arial, sans-serif; background: #f0f2f5; color: #1c1e21; }
+a { color: #1877f2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Navbar --- */
+.navbar { background: #1877f2; color: #fff; display: flex; align-items: center;
+  gap: 16px; padding: 0 20px; height: 56px; position: sticky; top: 0; z-index: 10;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+.logo { font-size: 28px; font-weight: bold; color: #fff; letter-spacing: -.5px; }
+.logo span { color: #fff; }
+.search-box { flex: 1; max-width: 400px; display: flex; }
+.search-box input { flex: 1; border: none; border-radius: 20px 0 0 20px; padding: 8px 14px; outline: none; }
+.search-box button { border: none; background: #fff; border-radius: 0 20px 20px 0; padding: 8px 14px; cursor: pointer; }
+.nav-links { display: flex; gap: 18px; margin-left: auto; }
+.nav-links a { color: #fff; font-weight: bold; font-size: 15px; }
+.nav-links a:hover { text-decoration: underline; }
+
+/* --- Layout: 3 columns --- */
+.layout { display: flex; max-width: 1200px; margin: 16px auto; gap: 16px; padding: 0 12px; }
+.sidebar-left, .sidebar-right { width: 260px; flex-shrink: 0; }
+.feed { flex: 1; min-width: 0; }
+.card { background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.15); padding: 16px; margin-bottom: 16px; }
+.card h3 { margin-bottom: 10px; font-size: 17px; }
+.sidebar-left a, .sidebar-right a { display: block; padding: 8px 4px; color: #1c1e21; border-radius: 6px; }
+.sidebar-left a:hover, .sidebar-right a:hover { background: #e4e6eb; text-decoration: none; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: #1877f2; color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font-weight: bold; vertical-align: middle; }
+.friend-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+.friend-row .name { font-weight: bold; }
+
+/* --- Create post --- */
+.create-post textarea { width: 100%; border: 1px solid #ccd0d5; border-radius: 8px;
+  padding: 10px; font-size: 15px; resize: vertical; min-height: 60px; font-family: inherit; }
+.create-post .actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+
+/* --- Buttons --- */
+.btn { background: #1877f2; color: #fff; border: none; border-radius: 6px;
+  padding: 8px 18px; font-size: 15px; font-weight: bold; cursor: pointer; }
+.btn:hover { background: #166fe5; }
+.btn-green { background: #42b72a; }
+.btn-green:hover { background: #36a420; }
+.btn-grey { background: #e4e6eb; color: #1c1e21; }
+.btn-grey:hover { background: #d8dadf; }
+.btn-small { padding: 5px 12px; font-size: 13px; }
+
+/* --- Post cards --- */
+.post-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.post-header .name { font-weight: bold; }
+.post-header .time { color: #65676b; font-size: 13px; }
+.post-content { font-size: 15px; line-height: 1.5; margin: 8px 0; white-space: pre-wrap; }
+.post-stats { color: #65676b; font-size: 14px; border-bottom: 1px solid #e4e6eb; padding-bottom: 8px; }
+.post-actions { display: flex; border-bottom: 1px solid #e4e6eb; padding: 4px 0; }
+.post-actions button { flex: 1; background: none; border: none; padding: 8px; font-size: 15px;
+  font-weight: bold; color: #65676b; cursor: pointer; border-radius: 6px; }
+.post-actions button:hover { background: #f0f2f5; }
+.post-actions button.liked { color: #1877f2; }
+.comment { display: flex; gap: 8px; margin-top: 10px; }
+.comment .body { background: #f0f2f5; border-radius: 12px; padding: 8px 12px; flex: 1; }
+.comment .body b { font-size: 14px; }
+.comment-form { display: flex; gap: 8px; margin-top: 10px; }
+.comment-form input { flex: 1; border: 1px solid #ccd0d5; border-radius: 20px; padding: 8px 14px; outline: none; }
+
+/* --- Auth page (index.html) --- */
+.auth-wrap { display: flex; max-width: 980px; margin: 80px auto; gap: 40px; padding: 0 20px; align-items: center; }
+.auth-brand h1 { color: #1877f2; font-size: 56px; }
+.auth-brand p { font-size: 24px; margin-top: 12px; }
+.auth-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.2);
+  padding: 20px; width: 400px; flex-shrink: 0; }
+.auth-card input, .auth-card select { width: 100%; padding: 12px; margin-bottom: 12px;
+  border: 1px solid #dddfe2; border-radius: 6px; font-size: 16px; }
+.auth-card .btn { width: 100%; padding: 12px; font-size: 17px; }
+.auth-card hr { margin: 16px 0; border: none; border-top: 1px solid #dadde1; }
+.error { background: #fde8e8; color: #c00; padding: 10px; border-radius: 6px; margin-bottom: 12px; }
+.message { background: #e6f4ea; color: #137333; padding: 10px; border-radius: 6px; margin-bottom: 12px; }
+
+/* --- Profile --- */
+.profile-cover { background: #1877f2; color: #fff; border-radius: 8px; padding: 32px 20px; margin-bottom: 16px; }
+.profile-cover h2 { font-size: 28px; }
+.profile-cover p { opacity: .9; margin-top: 6px; }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .sidebar-right { display: none; }
+  .auth-wrap { flex-direction: column; margin-top: 40px; }
+}
+@media (max-width: 700px) {
+  .sidebar-left { display: none; }
+  .search-box { display: none; }
+}

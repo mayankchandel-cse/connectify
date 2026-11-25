@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify — Log in or Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <h1>connectify</h1>
+      <p>Connect with friends and the world around you on Connectify.</p>
+      <p style="font-size:16px;color:#65676b">A Java + MySQL + JDBC college project.</p>
+    </div>
+
+    <div>
+      <!-- LOGIN: POST /login (LoginServlet) -->
+      <div class="auth-card">
+        <h2 style="margin-bottom:14px">Log in</h2>
+        <form action="login" method="post">
+          <input type="email" name="email" placeholder="Email address" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button class="btn" type="submit">Log In</button>
+        </form>
+        <p style="margin-top:12px;font-size:14px;color:#65676b">
+          Demo: <b>rahul@gmail.com / rahul123</b> &nbsp;·&nbsp; priya@gmail.com / priya123 &nbsp;·&nbsp; arjun@gmail.com / arjun123
+        </p>
+        <hr>
+        <!-- REGISTER: POST /register (RegisterServlet) -->
+        <h2 style="margin-bottom:14px">Create a new account</h2>
+        <form action="register" method="post">
+          <input type="text" name="name" placeholder="Full name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <input type="password" name="password" placeholder="New password (min 6 characters)" required minlength="6">
+          <input type="password" name="confirmPassword" placeholder="Confirm password" required>
+          <input type="text" name="bio" placeholder="Bio (optional)">
+          <input type="date" name="dob" title="Date of birth">
+          <select name="gender">
+            <option value="">Gender (optional)</option>
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+          <button class="btn btn-green" type="submit">Sign Up</button>
+        </form>
+      </div>
+      <p style="text-align:center;margin-top:14px;font-size:14px;color:#65676b">
+        Connectify — DBMS &amp; ADSA Project · Java · MySQL · JDBC · Servlets
+      </p>
+    </div>
+  </div>
+</body>
+</html>

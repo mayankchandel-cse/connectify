@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify — Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="feed">connectify</a>
+    <form class="search-box" action="search" method="get">
+      <input type="text" name="q" placeholder="Search friends..."><button type="submit">Search</button>
+    </form>
+    <nav class="nav-links"><a href="feed">Home</a><a href="profile">Profile</a><a href="friend">Friends</a><a href="logout">Log Out</a></nav>
+  </header>
+
+  <div class="layout">
+    <main class="feed" style="max-width:800px;margin:0 auto">
+      <div class="profile-cover">
+        <span class="avatar" style="width:80px;height:80px;font-size:32px;background:#fff;color:#1877f2">R</span>
+        <h2 style="margin-top:12px">Rahul Sharma</h2>
+        <p>rahul@gmail.com · CSE student | Coffee lover | Traveller</p>
+        <p>Joined Nov 2026 · 2 friends · 2 posts</p>
+      </div>
+
+      <!-- Edit profile: POST /profile (ProfileServlet) -->
+      <div class="card">
+        <h3>Edit Profile</h3>
+        <form action="profile" method="post">
+          <p style="margin-bottom:8px"><label>Name<br><input type="text" name="name" value="Rahul Sharma" style="width:100%;padding:8px;border:1px solid #ccd0d5;border-radius:6px"></label></p>
+          <p style="margin-bottom:8px"><label>Bio<br><input type="text" name="bio" value="CSE student | Coffee lover | Traveller" style="width:100%;padding:8px;border:1px solid #ccd0d5;border-radius:6px"></label></p>
+          <p style="margin-bottom:8px"><label>Date of birth<br><input type="date" name="dob" value="2004-05-12" style="padding:8px;border:1px solid #ccd0d5;border-radius:6px"></label></p>
+          <p style="margin-bottom:12px"><label>Gender<br>
+            <select name="gender" style="padding:8px;border:1px solid #ccd0d5;border-radius:6px">
+              <option selected>Male</option><option>Female</option><option>Other</option>
+            </select></label></p>
+          <button class="btn" type="submit">Save Changes</button>
+        </form>
+      </div>
+
+      <h3 style="margin-bottom:12px">My Posts</h3>
+      <article class="card">
+        <div class="post-header"><span class="avatar">R</span><div><div class="name">Rahul Sharma</div><div class="time">Nov 1, 2026 at 9:00 AM</div></div></div>
+        <p class="post-content">Hello Connectify! Excited to be here. This is my first post!</p>
+        <div class="post-stats">👍 3 likes · 💬 2 comments</div>
+        <div class="post-actions">
+          <form action="post" method="post" style="flex:1;display:flex"><input type="hidden" name="action" value="delete"><input type="hidden" name="postId" value="1"><button type="submit">🗑 Delete</button></form>
+        </div>
+      </article>
+      <article class="card">
+        <div class="post-header"><span class="avatar">R</span><div><div class="name">Rahul Sharma</div><div class="time">Nov 3, 2026 at 8:15 AM</div></div></div>
+        <p class="post-content">Anyone up for a cricket match this weekend?</p>
+        <div class="post-stats">👍 2 likes · 💬 1 comment</div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

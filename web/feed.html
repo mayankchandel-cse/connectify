@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify — News Feed</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="logo" href="feed">connectify</a>
+    <form class="search-box" action="search" method="get">
+      <input type="text" name="q" placeholder="Search friends by name or email...">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="nav-links">
+      <a href="feed">Home</a>
+      <a href="profile">Profile</a>
+      <a href="friend">Friends</a>
+      <a href="logout">Log Out</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <!-- Left sidebar -->
+    <aside class="sidebar-left">
+      <div class="card">
+        <div class="friend-row"><span class="avatar">R</span><span class="name">Rahul Sharma</span></div>
+        <a href="profile">👤 My Profile</a>
+        <a href="friend">👥 Friends</a>
+        <a href="feed?sort=likes">🔥 Most Liked Posts</a>
+        <a href="feed?sort=date">🕒 Newest First</a>
+        <a href="logout">🚪 Log Out</a>
+      </div>
+      <div class="card">
+        <h3>Notifications</h3>
+        <p style="color:#65676b;font-size:14px">Priya liked your post.<br>Arjun commented on your post.<br>Sneha sent a friend request.</p>
+      </div>
+    </aside>
+
+    <!-- Centre feed -->
+    <main class="feed">
+      <!-- Create post: POST /post (PostServlet, action=create) -->
+      <div class="card create-post">
+        <form action="post" method="post">
+          <input type="hidden" name="action" value="create">
+          <textarea name="content" placeholder="What's on your mind, Rahul?" required></textarea>
+          <div class="actions"><button class="btn" type="submit">Post</button></div>
+        </form>
+      </div>
+
+      <!-- Sample post 1 (FeedServlet fills real posts here from the database) -->
+      <article class="card">
+        <div class="post-header">
+          <span class="avatar">P</span>
+          <div><div class="name">Priya Patel</div><div class="time">Nov 2, 2026 at 10:30 AM</div></div>
+        </div>
+        <p class="post-content">Just finished my DBMS project demo. Feeling relieved!</p>
+        <div class="post-stats">👍 2 likes · 💬 1 comment</div>
+        <div class="post-actions">
+          <form action="like" method="post" style="flex:1;display:flex"><input type="hidden" name="postId" value="2"><button type="submit">👍 Like</button></form>
+          <button type="button">💬 Comment</button>
+        </div>
+        <div class="comment"><span class="avatar" style="width:32px;height:32px;font-size:14px">R</span>
+          <div class="body"><b>Rahul Sharma</b><br>Congratulations Priya! Well done.</div></div>
+        <form class="comment-form" action="comment" method="post">
+          <input type="hidden" name="postId" value="2">
+          <input type="text" name="content" placeholder="Write a comment..." required>
+          <button class="btn btn-small" type="submit">Post</button>
+        </form>
+      </article>
+
+      <!-- Sample post 2 -->
+      <article class="card">
+        <div class="post-header">
+          <span class="avatar">A</span>
+          <div><div class="name">Arjun Mehta</div><div class="time">Nov 2, 2026 at 6:45 PM</div></div>
+        </div>
+        <p class="post-content">Won the inter-college gaming tournament today!</p>
+        <div class="post-stats">👍 3 likes · 💬 1 comment</div>
+        <div class="post-actions">
+          <form action="like" method="post" style="flex:1;display:flex"><input type="hidden" name="postId" value="3"><button type="submit">👍 Like</button></form>
+          <button type="button">💬 Comment</button>
+        </div>
+        <div class="comment"><span class="avatar" style="width:32px;height:32px;font-size:14px">S</span>
+          <div class="body"><b>Sneha Gupta</b><br>Wow, congratulations Arjun!</div></div>
+        <form class="comment-form" action="comment" method="post">
+          <input type="hidden" name="postId" value="3">
+          <input type="text" name="content" placeholder="Write a comment..." required>
+          <button class="btn btn-small" type="submit">Post</button>
+        </form>
+      </article>
+    </main>
+
+    <!-- Right sidebar: suggested friends -->
+    <aside class="sidebar-right">
+      <div class="card">
+        <h3>Suggested Friends</h3>
+        <div class="friend-row"><span class="avatar">S</span><div><div class="name">Sneha Gupta</div><div style="font-size:13px;color:#65676b">Bookworm</div></div></div>
+        <form action="friend" method="post" style="margin:4px 0 12px 50px"><input type="hidden" name="action" value="send"><input type="hidden" name="receiverId" value="4"><button class="btn btn-small" type="submit">+ Add Friend</button></form>
+        <div class="friend-row"><span class="avatar">V</span><div><div class="name">Vikram Singh</div><div style="font-size:13px;color:#65676b">Musician</div></div></div>
+        <form action="friend" method="post" style="margin:4px 0 12px 50px"><input type="hidden" name="action" value="send"><input type="hidden" name="receiverId" value="5"><button class="btn btn-small" type="submit">+ Add Friend</button></form>
+        <div class="friend-row"><span class="avatar">K</span><div><div class="name">Karan Joshi</div><div style="font-size:13px;color:#65676b">Football fan</div></div></div>
+        <form action="friend" method="post" style="margin:4px 0 0 50px"><input type="hidden" name="action" value="send"><input type="hidden" name="receiverId" value="7"><button class="btn btn-small" type="submit">+ Add Friend</button></form>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
